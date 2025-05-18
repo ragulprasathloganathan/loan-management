@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Admin {
@@ -24,8 +25,8 @@ public class Admin {
 	 @Column(nullable=false)
 	 private String status;
 	 
-//	@OneToOne
-//	private User user; 
+	@OneToOne
+	private User user; 
 	
 
 	
@@ -68,11 +69,11 @@ public class Admin {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-//	public User getUser() {
-//		return user;
-//	}
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 }
